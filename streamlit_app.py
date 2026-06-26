@@ -115,8 +115,6 @@ metric_col = {
     "Tasa de gravedad": "tasa_graves_pct",
 }[metric_option]
 
-st.sidebar.caption("Los datos están agregados para que el dashboard cargue rápido en Streamlit Cloud.")
-
 # ------------------------------
 # Título
 # ------------------------------
@@ -380,7 +378,6 @@ with tab_infra:
 
 with tab_detalle:
     st.subheader("Tablas agregadas")
-    st.write("Estas tablas son resúmenes pequeños generados desde el Data Mart. Puedes usarlas para validar cifras o explicar el modelo BI.")
     option = st.selectbox("Tabla", list(data.keys()))
     df_show = filter_year(data[option], selected_years)
     st.dataframe(df_show, use_container_width=True, height=500)
